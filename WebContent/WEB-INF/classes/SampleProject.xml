@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="SampleProject" namespace="/" extends="default">
+
+        <action name="Login_*" method="{1}" class="SampleProject.Login">
+            <result name="input">/pages/Login.jsp</result>
+            <result name="Student" type="redirectAction">
+            	student/StuInfo.action?id=${username}</result>
+            <result name="Teacher" type="redirectAction">
+            	teacher/TeacherInfo.action?id=${username}</result>
+            <result name="Admin" type="redirectAction">
+            	admin/AdminInfo.action?id=${username}</result>
+        </action>
+
+        <action name="*" class="SampleProject.ExampleSupport">
+            <result>/pages/404.jsp</result>
+        </action>
+
+        <!-- Add actions here -->
+    </package>
+</struts>
