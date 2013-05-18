@@ -21,8 +21,20 @@
 
 package SampleProject;
 
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+
+
+
+
 public class Login extends ExampleSupport {
-	public class UserLogin{
+	private class UserLogin{
 		private String username;
 		private String password;
 		private int role;
@@ -46,44 +58,77 @@ public class Login extends ExampleSupport {
 			this.role = role;
 		}
 	}
-	private UserLogin user = new UserLogin();
     public String execute() throws Exception {
-    	if (isInvalid(getUser().getUsername())) return INPUT;
-        if (isInvalid(getUser().getPassword())) return INPUT;
-    	/*
-        if (isInvalid(getUsername())) return INPUT;
-        System.out.println("!!!!!!!!!!!!!!!!!!");
-        if (isInvalid(getPassword())) return INPUT;
+    	
+    	
+        if (isInvalid(user.getUsername())) return INPUT;
+
+        if (isInvalid(user.getPassword())) return INPUT;
 
         /**TO DO*/
-    	/*
+        Connection conn = null;
         String type = "";
-        if(getIdentity().equalsIgnoreCase("0")) type = "Student";
-        else if(getIdentity().equalsIgnoreCase("1")) type = "Teacher";
-        else if(getIdentity().equalsIgnoreCase("2")) type = "Admin";
         
-        if(getUsername().equalsIgnoreCase("admin"))
-        {
-        	getSession().put("password", getPassword());
-        	return type;
+        if(user.getRole()==0) type = "Student";
+        else if(user.getRole()==1) type = "Teacher";
+        else if(user.getRole()==2) type = "Admin";
+        
+        String url = "jdbc:mysql://localhost:3306/graduate_status?characterEncoding=UTF-8";
+        String username = "root";  
+        String password = "";
+        try {   
+        		
+            	Class.forName("com.mysql.jdbc.Driver" );  
+            	
+            	conn = (Connection) DriverManager.getConnection( url,username, password );   
+            	
+            } 
+        catch ( ClassNotFoundException cnfex ) {  
+            System.err.println(  
+            "装载 JDBC/ODBC 驱动程序失败。" );  
+            cnfex.printStackTrace();   
         }
-        else addActionError("Login Error!用户名是admin啊");
-        	*/
-    	String type = "";
-    	if(getUser().getRole() == 0) type = "Student";
-    	else if(getUser().getRole() == 1) type = "Teacher";
-    	else if(getUser().getRole() == 2) type = "Admin";
-    	return type;
-       // return INPUT;
+        catch ( SQLException sqlex ) {  
+            System.err.println( "无法连接数据库" );  
+            sqlex.printStackTrace();   
+        }
+        catch (Exception e) {
+			// TODO: handle exception
+        	 System.out.println(e);
+		}
+        
+        try
+        {
+        	Statement st = (Statement) ((java.sql.Connection) conn).createStatement();
+            System.out.print(user.getUsername());
+            String sql = "select * from userlogin where username = '"+user.getUsername()+"'and password = '"+user.getPassword()+"'and role = '"+user.getRole()+"'";
+            ResultSet rs = ((java.sql.Statement) st).executeQuery(sql);
+            if(rs.next())
+            	return type;
+            else
+            {
+            	addActionError("用户名或密码错误");
+            }
+        }
+        catch (Exception e) {
+			// TODO: handle exception
+        	 System.out.println(e);
+		}
+        
+        	
+        return INPUT;
     }
 
     private boolean isInvalid(String value) {
         return (value == null || value.length() == 0);
     }
+    private UserLogin user = new UserLogin();
     public UserLogin getUser(){
     	return user;
     }
     public void setUser(UserLogin user){
     	this.user = user; 
     }
+    
+
 }

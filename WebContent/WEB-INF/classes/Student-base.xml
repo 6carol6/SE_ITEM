@@ -5,7 +5,7 @@
 <struts>
     <package name="Student-base" namespace="/student" extends="default">
         <action name="StuInfo" class="SampleProject.Student.Info">
-            <result>/pages/student/info.jsp</result>
+            <result>/pages/student/StudentIndex.jsp</result>
         </action>
         
         <action name="StuDetailInfo" class="SampleProject.Student.DetailInfo">

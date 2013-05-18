@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>南京大学研究生学籍管理系统</title>
-    <style type="text/css"><!--<%@ include file="/pages/Login.css"%>--></style>
+    <style type="text/css"><!--<%@ include file="/pages/css/Login.css"%>--></style>
 </head>
 <body>
 		<div id="Wrapper">
