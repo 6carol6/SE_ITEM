@@ -1,0 +1,91 @@
+@CHARSET "GB18030";
+
+
+#courseList{
+	position:relative;
+	float:left;
+	width:45%;
+	left:20px;
+	top:20px;
+	height:100%;
+}
+
+#tbCourseList{
+	width : 100%;
+	border: 1px solid #000000;
+	line-height:200%;
+}
+
+#tbCourseList thead{
+	background-color : #cccccc;
+}
+
+#tbCourseList tbody{
+	cursor : pointer;
+}
+
+#tbCourseList tbody tr{
+	
+}
+
+#operation{	
+	position:relative;
+	top:0px;
+	width:100px;
+	left: 60px;
+	height: 10px;
+}
+
+#courseDetail{
+	position:relative;
+	float:left;
+	top:10px;
+	left: 60px;
+	width:50%;
+}
+
+#tbClassList{
+	width : 80%;
+	border: 1px solid #000000;
+	line-height:200%;
+}
+
+#tbClassList thead{
+	background-color : #cccccc;
+}
+
+#tbClassList tbody{
+}
+#comment{
+	position:relative;
+	top:40px;
+	width:40%;
+	left: 60px;
+	line-height:150%;
+	color: #0000FF;
+}
+
+.TABLE_TR_01
+{
+	background-color: #ddf0fb;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;/*????????*/
+	height: 20px;
+	border:1px;
+	border-color: #000000;
+}
+
+.TABLE_TR_02
+{
+	background-color: #f2faf3;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;/*????????*/
+	width: 50px;
+	height: 20px;
+	border:1px;
+	border-color: #000000;
+}

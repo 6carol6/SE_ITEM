@@ -1,0 +1,420 @@
+@CHARSET "UTF-8";
+@CHARSET "UTF-8";
+body
+{
+	margin:0px;	
+}
+
+br, p, div, span, table, input, textarea, select, legend
+{
+	font-size: 12px;
+	font-family: "瀹嬩綋";
+}
+
+a{
+	font-size:12px;
+	padding:0px;
+	margin:0px;
+}
+a:active {
+	font-size:12px;
+	color: f4a460;
+	text-decoration: none; 
+}
+
+a:visted {
+	font-size:12px;
+	color: 0000FF;
+	text-decoration: none;
+}
+
+a:hover {
+	font-size:12px;
+	color: 0000FF;
+	text-decoration: underline; 
+}
+
+table
+{
+	border-Collapse:collapse;
+}
+
+form
+{
+	margin-top:2px;
+	margin-bottom:6px;
+}
+
+hr
+{
+	height:0px;
+	border:1px dotted #684C18;
+}
+
+.HighlightText
+{
+	color:red;
+}
+
+.SmallText
+{
+	font-size:12px;
+}
+
+.WeeklyTag 
+{
+	font-size:12px;
+	width:245px;
+	height:100px;
+	position:absolute;
+	border:1px solid #123DA1;
+	background-color:#BFD1DA;
+	padding:2px 2px 2px 2px;
+}
+
+.WeeklyTag ul
+{	
+	list-style: none; 
+	margin: 0;    
+    padding: 0; 
+}
+
+.WeeklyTag li
+{	
+	float: left;
+	width: 40px;
+}
+.WeeklyTag .buttonDo
+{
+	text-align:right;
+	padding-top:8px;
+	padding-right:10px;
+	font-size:12px;
+}
+
+/*******   SelectorDiv   ********/
+
+.SelectorBar .UnSelected
+{
+	float:left;
+	height:20px;
+	width:80px;
+	padding:4px 0px 0px 0px;
+	text-align:center;
+	border:solid 1px #CCD9C2;
+	border-bottom-width:0px;
+	margin:0px 0px 0px 10px;
+	cursor:hand;
+	z-index:1;
+}
+
+.SelectorBar .Selected
+{
+	float:left;
+	position:relative;
+	height:21px;
+	width:80px;
+	padding:4px 0px 0px 0px;
+	margin-left:10px;
+	margin-bottom:-5px;
+	border:solid 1px #015E9F;
+	border-bottom-width:0px;
+	background-color:#D5E4FB;
+	text-align:center;
+	font-weight:bold;
+	z-index:3;
+}
+
+.SelectorTopBg
+{
+	clear:both;
+	height:20px;
+	width:100%;
+	background-color:#D5E4FB;
+	border-top:solid 1px #015E9F;
+	text-align:right;
+	padding:4px 8px 4px 4px;
+	z-index:2;
+}
+
+.topMenu UL {  
+	margin: 0;    
+    padding: 0; 
+	padding-left:150px;       
+    list-style: none;    
+}    
+.topMenu UL LI {    
+    float: left;        
+    background-color: #E1E9F8;    
+    margin: 10px 3px;    
+    height: 25px;    
+}
+.topMenu UL LI A {    
+    display: block;    
+    height: 25px;    
+    padding: 0 25px;    
+    line-height: 24px;    
+    background-color: #E1E9F8;    
+    text-decoration: none;    
+    float: left;    
+    text-align:center;    
+    color: #000000;    
+    font-weight: bold;  
+    font-size:14px;    
+} 
+
+.leftMenu UL { 
+	position:relative;  
+	clear: both; 
+    margin: 0;    
+    padding: 0;    
+    list-style: none;  
+    width:200px;
+    height:90%;
+    float: left; 
+    text-align:center;
+} 
+
+#bodyContent {
+	font-family: Tahoma, arial, helvetica, sans-serif;
+	font-size: 12px; 
+	padding-left: 8px;
+	vertical-align: top;
+}
+#tabmenu {
+	border-bottom: 1px solid #c4c4be;
+	margin: 2px 0px 0px 0px;
+	padding-left: 12px;
+	z-index: 1;
+}
+
+#tabmenu li {
+	display: inline;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+#tabmenu a, a.active {
+	color: #4F4F4F;
+	background-color: #f6f7ee;
+	font: bold 12px;
+	border: 1px solid #c4c4be;
+	padding: 2px 5px 0px 5px;
+	margin: 0;
+	text-decoration: none;
+}
+
+#tabmenu a.active {
+	background-color: #FFFFFF;
+	border-bottom: 3px solid #FFFFFF;
+}
+
+#tabmenu a.active:visted {
+	background-color: #FFFFFF;
+}
+
+#tabmenu a.active:hover {
+	background-color: #FFFFFF;
+	color: #4F4F4F;
+}
+
+#tabmenu a:visited {
+	color: #4F4F4F;
+}
+
+#tabmenu a:hover {
+	color: #FFFFFF;
+	background-color: #c4c4be;
+}
+#buttonmenu{
+	margin: 5px 0px 0px 0px;
+	padding: 0px;
+	z-index: 1;
+}
+
+#buttonmenu li {
+	display: inline;
+	overflow: hidden;
+	list-style-type: none;
+}
+
+#buttonmenu a.normal{	
+	font: bold 12px;	
+	padding: 3px 5px 2px 5px;
+	margin: 0;
+	text-decoration: none;
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+	height:20px;
+}
+
+#buttonmenu a.normal:active {
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+}
+
+#buttonmenu a.normal:visited {
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+}
+
+#buttonmenu a.normal:hover {
+	color: #000000;
+	background-color: #FFFFFF;
+	border: 1px solid #000000;
+}
+
+#buttonmenu a.select{	
+	font: bold 12px;	
+	padding: 3px 5px 2px 5px;
+	margin: 0;
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #83BEFF;
+	border: 1px solid #000000;
+	height:20px;
+}
+
+#buttonmenu a.select:active {
+	color: #FFFFFF;
+	background-color: #83BEFF;
+	border: 1px solid #000000;
+}
+
+#buttonmenu a.select:visited {
+	color: #FFFFFF;
+	background-color: #83BEFF;
+	border: 1px solid #000000;
+}
+
+#buttonmenu a.select:hover {
+	color: #FFFFFF;
+	background-color: #83BEFF;
+	border: 1px solid #000000;
+}
+
+#content {
+	font-size:12px;
+	background-color: white;
+	padding: 10px;
+	border: 1px solid #c4c4be;
+	border-top: none;
+	z-index: 2;
+}
+a.ButtonLink{    
+    padding: 0px 4px 0px 4px;    
+    line-height: 150%;    
+    background-color: #FFFFFF;    
+    text-decoration: none;      
+    text-align: center;  
+    color: #000000;    
+    font-weight: bold;
+    border: 1px solid #000000; 
+    word-wrap:nowrap;
+   	width:60px;   	
+}
+a.ButtonLink:active{
+	color:#0033cc;
+	text-decoration: none; 
+}
+a.ButtonLink:visited{
+	color:#0033cc;
+	text-decoration: none; 
+}
+a.ButtonLink:hover{
+	color:#000000;
+	text-decoration: none; 
+}
+
+a.ButtonLink_2{    
+    padding: 0px 4px 0px 4px;    
+    line-height: 150%;    
+    background-color: #83BEFF;    
+    text-decoration: none;      
+    text-align: center;  
+    color: #FFFFFF;    
+    border: 1px solid #666666; 
+    word-wrap:nowrap;
+   	width:70px;
+   	font-weight: bold;
+}
+
+a.ButtonLink_2:active{
+	color:#FFFFFF;
+	text-decoration: none; 
+}
+a.ButtonLink_2:visited{
+	color:#FFFFFF;
+	text-decoration: none; 
+}
+a.ButtonLink_2:hover{
+	color:#FFFFFF;
+	text-decoration: none; 
+}
+
+iframe.NormalFrame
+{
+	width:90%;
+	height:400;
+	border-top:1px dashed #AA2A36;
+	margin-top:4px;
+	padding-top:4px;
+}
+
+table.NormalTable
+{	
+	width:80%;
+	font-size:12px;
+	border:1px solid #B08B98;
+}
+
+.NormalTable .HeadTr
+{
+	background-color:#498DE5;
+	color:#FFFFFF;
+	font-Weight:bold;
+}
+.NormalTable Caption
+{
+	font-size:13px;
+	color:#000000;
+	font-Weight:bold;
+	padding:5px 5px 5px 5px;
+}
+
+.NormalTable .EmptyRow
+{
+	color:#684C18;
+}
+
+.TextInput
+{
+	border:1px solid #684C18;
+	font-size:12px;
+	padding:3px 2px 1px 2px;
+	height:20px;
+}
+
+.NormalButton
+{
+	border-top:1px solid #F5F5F5;
+	border-left:1px solid #F5F5F5;
+	border-bottom:1px solid #000000;
+	border-right:1px solid #000000;
+	background-color:#C7AB77;
+	color:#fff;
+	width:60px;
+	padding-top:2px;
+}
+
+.InfoDiv
+{
+	margin-top:1px;
+}
+.InfoDiv span
+{
+	width:60px;
+}

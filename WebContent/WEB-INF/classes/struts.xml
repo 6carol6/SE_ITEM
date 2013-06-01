@@ -40,6 +40,8 @@
     <include file="Student-base.xml"/>
 	<include file="Teacher-base.xml"/>
 	<include file="Admin-base.xml"/>
+	<include file="Stu-Info.xml"/>
+	<include file="Stu-Learning.xml"/>
     <!-- Add packages here -->
 
 </struts>

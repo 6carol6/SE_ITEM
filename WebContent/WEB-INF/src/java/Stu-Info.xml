@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="Stu-Info" namespace="/pages/student/studentinfo" extends="default">
+        
+        <action name="ModifyPassword" class="SampleProject.Student.ModifyPassword">
+            <result>/pages/student/studentinfo/modifyPassword.jsp</result>
+            <result name="error">/pages/student/studentinfo/modifyPassword.jsp</result>
+        </action>
+        
+        <action name="StuBasicInfo" class="SampleProject.Student.MyBasicInfo">
+        	<result>/pages/student/studentinfo/studentinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/studentinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView_10" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView_11" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView_20" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView_21" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView_31" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+        <action name="StuScoreView_32" class="SampleProject.Student.SearchScore">
+        	<result>/pages/student/studentinfo/achievementinfo.jsp</result>
+        	<result name="error">/pages/student/studentinfo/achievementinfo.jsp</result>
+        </action>
+        
+
+        <!-- Add actions here -->
+    </package>
+</struts>

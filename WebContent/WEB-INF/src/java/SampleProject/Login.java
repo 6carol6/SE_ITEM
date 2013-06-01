@@ -21,51 +21,31 @@
 
 package SampleProject;
 
-
-import java.sql.DriverManager;
+import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.Map;
 
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
+import com.opensymphony.xwork2.ActionContext;
 
-
-
-
-
+@SuppressWarnings("serial")
 public class Login extends ExampleSupport {
-	private class UserLogin{
-		private String username;
-		private String password;
-		private int role;
-		
-		public String getUsername(){
-			return username;
-		}
-		public void setUsername(String username){
-			this.username = username;
-		}
-		public String getPassword(){
-			return password;
-		}
-		public void setPassword(String password){
-			this.password = password;
-		}
-		public int getRole(){
-			return role;
-		}
-		public void setRole(int role){
-			this.role = role;
-		}
-	}
+	private UserLogin user = new UserLogin();
+	private DBHandler dbHandler = new DBHandler();
+	
+    public UserLogin getUser(){
+    	return user;
+    }
+    
+    public void setUser(UserLogin user){
+    	this.user = user; 
+    }
+    
     public String execute() throws Exception {
-    	
     	
         if (isInvalid(user.getUsername())) return INPUT;
 
         if (isInvalid(user.getPassword())) return INPUT;
 
-        /**TO DO*/
         Connection conn = null;
         String type = "";
         
@@ -73,62 +53,48 @@ public class Login extends ExampleSupport {
         else if(user.getRole()==1) type = "Teacher";
         else if(user.getRole()==2) type = "Admin";
         
-        String url = "jdbc:mysql://localhost:3306/graduate_status?characterEncoding=UTF-8";
-        String username = "root";  
-        String password = "";
-        try {   
-        		
-            	Class.forName("com.mysql.jdbc.Driver" );  
-            	
-            	conn = (Connection) DriverManager.getConnection( url,username, password );   
-            	
-            } 
-        catch ( ClassNotFoundException cnfex ) {  
-            System.err.println(  
-            "装载 JDBC/ODBC 驱动程序失败。" );  
-            cnfex.printStackTrace();   
-        }
-        catch ( SQLException sqlex ) {  
-            System.err.println( "无法连接数据库" );  
-            sqlex.printStackTrace();   
-        }
-        catch (Exception e) {
-			// TODO: handle exception
-        	 System.out.println(e);
-		}
+        conn = dbHandler.getConnect();
         
-        try
-        {
-        	Statement st = (Statement) ((java.sql.Connection) conn).createStatement();
-            System.out.print(user.getUsername());
-            String sql = "select * from userlogin where username = '"+user.getUsername()+"'and password = '"+user.getPassword()+"'and role = '"+user.getRole()+"'";
-            ResultSet rs = ((java.sql.Statement) st).executeQuery(sql);
-            if(rs.next())
-            	return type;
-            else
-            {
-            	addActionError("用户名或密码错误");
-            }
+        String sql = "select * from userlogin where username = '"+user.getUsername()+"'and password = '"+user.getPassword()+"'and role = '"+user.getRole()+"'";
+        ResultSet rs = dbHandler.searchInfo(conn, sql);
+        if(rs.next()) {
+        	ActionContext actionContext = ActionContext.getContext();
+        	Map<String, Object> session = actionContext.getSession();
+        	session.put("USER", user.getUsername());
+        	return type;
         }
-        catch (Exception e) {
-			// TODO: handle exception
-        	 System.out.println(e);
-		}
-        
-        	
+        else
+        	addActionError("用户名或密码错误");
+      
         return INPUT;
     }
 
     private boolean isInvalid(String value) {
         return (value == null || value.length() == 0);
     }
-    private UserLogin user = new UserLogin();
-    public UserLogin getUser(){
-    	return user;
-    }
-    public void setUser(UserLogin user){
-    	this.user = user; 
-    }
-    
+}
 
+class UserLogin{
+	private String username;
+	private String password;
+	private int role;
+	
+	public String getUsername(){
+		return username;
+	}
+	public void setUsername(String username){
+		this.username = username;
+	}
+	public String getPassword(){
+		return password;
+	}
+	public void setPassword(String password){
+		this.password = password;
+	}
+	public int getRole(){
+		return role;
+	}
+	public void setRole(int role){
+		this.role = role;
+	}
 }

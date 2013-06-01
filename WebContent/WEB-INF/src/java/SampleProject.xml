@@ -9,11 +9,11 @@
         <action name="Login_*" method="{1}" class="SampleProject.Login">
             <result name="input">/pages/Login.jsp</result>
             <result name="Student" type="redirectAction">
-            	student/StuInfo.action?id=${username}</result>
+            	student/StuInfo.action?id=${user.username}</result>
             <result name="Teacher" type="redirectAction">
-            	teacher/TeacherInfo.action?id=${username}</result>
+            	teacher/TeacherInfo.action?id=${user.username}</result>
             <result name="Admin" type="redirectAction">
-            	admin/AdminInfo.action?id=${username}</result>
+            	admin/AdminInfo.action?id=${user.username}</result>
         </action>
 
         <action name="*" class="SampleProject.ExampleSupport">

@@ -22,16 +22,15 @@
 package SampleProject;
 
 import java.util.Map;
-
 import org.apache.struts2.interceptor.SessionAware;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * Base Action class for the Tutorial package.
  */
+@SuppressWarnings("serial")
 public class ExampleSupport extends ActionSupport implements SessionAware {
-	private Map session;
+	private Map<String, Object> session;
 	
 	@Override
 	public void setSession(Map<String, Object> arg0) {

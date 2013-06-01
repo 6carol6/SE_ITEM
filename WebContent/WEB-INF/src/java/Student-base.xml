@@ -4,14 +4,21 @@
         "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
     <package name="Student-base" namespace="/student" extends="default">
+  
         <action name="StuInfo" class="SampleProject.Student.Info">
             <result>/pages/student/StudentIndex.jsp</result>
         </action>
-        
+           <!--    
         <action name="StuDetailInfo" class="SampleProject.Student.DetailInfo">
             <result>/pages/student/detailInfo.jsp</result>
         </action>
-
+ -->
         <!-- Add actions here -->
+        <action name="StuSelIndex" class="SampleProject.Student.elective.SelIndex">
+            <result>/pages/student/elective/selIndex.jsp</result>
+        </action>
+        <action name="SpecialityCourseList" class="SampleProject.Student.elective.SpecialityCourseList">
+            <result>/pages/student/elective/specialityCourseList.jsp</result>
+        </action>
     </package>
 </struts>
